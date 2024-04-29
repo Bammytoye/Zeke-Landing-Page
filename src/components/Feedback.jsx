@@ -1,20 +1,19 @@
-import Card from './Card'
 import Slider from "react-slick";
-import {courses} from '../data/courses'
+import FeedbackCard from "./FeedbackCard";
 
-const Courses = () => {
+const Feedback = () => {
 
     var settings = {
         dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 2,
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 1025,
+                breakpoint: 1024,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: false,
                     dots: true
@@ -23,8 +22,8 @@ const Courses = () => {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
                     infinite: false,
                     dots: true
                 }
@@ -44,24 +43,25 @@ const Courses = () => {
         ]
     };
 
-
     return (
-        <div className="w-full bg-[#c4cac8b2] py-32">
-            <div className="lg:max-w-[1025px] m-auto max-w-[600px] px-20 lg:px-0">
-                <div className="py-4">
-                    <h1 className="py-3 text-3xl font-bold text-center">Most Popular <span className='text-[#2863bb]'>Courses</span></h1>
-                    <p className="text-[#6D737A] text-center">Various Versions have evolved over the years, sometimes by accident.</p>
+        <div className='w-full bg-white py-32'>
+            <div className='lg:max-w-[1025px] m-auto max-w-[600px] px-4 md:px-0'>
+                <div className='py-4'>
+                    <h1 className='py-3 text-3xl font-bold text-center'>Students&apos; <span className='text-[#2863bb]'>Feedback</span></h1>
+                    <p className='text-gray-800 text-center'>Various versions have evolved over the years, sometimes by accident.</p>
                 </div>
 
-                <Slider {...settings} className='px-5'>
-                    {courses.map((course,i)=>
-                    <div key={i}>
-                        <Card course={course} />
-                    </div> ) }
-            </Slider>
+                <Slider {...settings} >
+                    <FeedbackCard />
+                    <FeedbackCard />
+                    <FeedbackCard />
+                    <FeedbackCard />
+                    <FeedbackCard />
+                    <FeedbackCard />
+                </Slider>
             </div>
         </div>
     )
 }
 
-export default Courses
+export default Feedback

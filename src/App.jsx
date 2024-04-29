@@ -1,4 +1,4 @@
-import { Navbar, Hero, Companies, Courses } from "./components"
+import { Navbar, Hero, Companies, Courses, Achievement, Catergories, Feedback, CTA, Footer } from "./components"
 import './App.css'
 
 const App = () => {
@@ -8,6 +8,11 @@ const App = () => {
       <Hero />
       <Companies />
       <Courses />
+      <Achievement />
+      <Catergories />
+      <Feedback />
+      <CTA />
+      <Footer />
     </div>
   )
 }
